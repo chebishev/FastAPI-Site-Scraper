@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Venv
+.fastapi-scraper-venv/
+.vscode/
