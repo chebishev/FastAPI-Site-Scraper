@@ -25,7 +25,7 @@ app = FastAPI(
 
 tags_metadata = [
     {
-        "name": Scrapes links from a website",
+        "name": "Scrapes links from a website",
         "description": "This endpoint scrapes all the links from a given website (in format \"https://example.com/\") and returns them in a dictionary format where the key is the link address and the value is the link text.",
     },
 ]
