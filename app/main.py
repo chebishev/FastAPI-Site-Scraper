@@ -30,8 +30,6 @@ tags_metadata = [
     },
 ]
 
-app = FastAPI()
-
 #Todo: add the tag to the endpoint
 @app.get(
     "/valid-links",
