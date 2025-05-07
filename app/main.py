@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 import uvicorn
-from scrapper import valid_links
+from .scrapper import valid_links
 
 
 description = """
