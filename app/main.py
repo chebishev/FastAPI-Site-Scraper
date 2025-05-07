@@ -1,17 +1,17 @@
 from fastapi import FastAPI, Query
 import uvicorn
-from .scrapper import valid_links
+from scrapper import valid_links
 
 
 description = """
-    Get all hrefs from website in format https://example.com
+    Get all hrefs and corresponding text from website in format https://example.com
     """
 
 app = FastAPI(
     title="Fast API SITE Scraper",
     description=description,
-    summary="API that allow you to get all valid links from website in format https://example.com",
-    version="0.0.2",
+    summary="API that allows you to get all valid links from website in format https://example.com",
+    version="0.0.3",
     contact={
         "name": "Atanas Chebishev",
         "url": "https://chebishev.github.io/",
@@ -32,10 +32,10 @@ tags_metadata = [
 
 #Todo: add the tag to the endpoint
 @app.get(
-    "/valid-links",
+    "/valid-links", tags=["Scrapes links from a website"],
     )
-def get_valid_links(site: str  = Query(..., description="The URL of the site to scrape in format \"https://example.com/\"")):
-    data = valid_links(site)
+def get_valid_links(web_address: str  = Query(..., description="The URL of the site to scrape in format \"https://example.com/\"")):
+    data = valid_links(web_address)
     return data
 
 
